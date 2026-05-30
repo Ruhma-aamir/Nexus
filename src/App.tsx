@@ -30,6 +30,13 @@ import { DealsPage } from './pages/deals/DealsPage';
 // Chat Pages
 import { ChatPage } from './pages/chat/ChatPage';
 
+// NEW WORKSPACE IMPORT FOR WEEK 1 TASK
+import MeetingsSchedule from './components/collaboration/MeetingsSchedule';
+import VideoRoom from './components/collaboration/VideoRoom';
+import DocumentChamber from './components/collaboration/DocumentChamber';
+import QuantumWallet from './components/collaboration/QuantumWallet';
+import SecurityChamber from './components/collaboration/SecurityChamber';
+
 function App() {
   return (
     <AuthProvider>
@@ -83,7 +90,32 @@ function App() {
           <Route path="/deals" element={<DashboardLayout />}>
             <Route index element={<DealsPage />} />
           </Route>
+
+          {/* ADDED IN WEEK 1: CALENDAR ROUTE INFRASTRUCTURE */}
+          <Route path="/meetings" element={<DashboardLayout />}>
+            <Route index element={<MeetingsSchedule />} />
+          </Route>
           
+          {/* ADDED IN WEEK 2: VIDEO CALL ROUTE */}
+<Route path="/video-room" element={<DashboardLayout />}>
+  <Route index element={<VideoRoom />} />
+</Route>
+
+{/* ADDED IN WEEK 2: DOCUMENT PROCESSING CHAMBER */}
+<Route path="/document-chamber" element={<DashboardLayout />}>
+  <Route index element={<DocumentChamber />} />
+</Route>
+
+     {/* ADDED IN WEEK 3: QUANTUM ESCROW WALLET LEDGER */}
+<Route path="/wallet" element={<DashboardLayout />}>
+  <Route index element={<QuantumWallet />} />
+</Route>
+
+{/* ADDED IN WEEK 3: SECURITY & ACCESS CONTROL */}
+<Route path="/security-center" element={<DashboardLayout />}>
+  <Route index element={<SecurityChamber />} />
+</Route>
+
           {/* Chat Routes */}
           <Route path="/chat" element={<DashboardLayout />}>
             <Route index element={<ChatPage />} />

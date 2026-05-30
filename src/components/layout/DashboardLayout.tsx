@@ -3,6 +3,7 @@ import { Outlet, Navigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { Navbar } from './Navbar';
 import { Sidebar } from './Sidebar';
+import GuidedTour from '../../components/collaboration/GuidedTour';
 
 export const DashboardLayout: React.FC = () => {
   const { user, isAuthenticated, isLoading } = useAuth();
@@ -32,6 +33,9 @@ export const DashboardLayout: React.FC = () => {
           </div>
         </main>
       </div>
+
+      {/* ADDED IN WEEK 3: GUIDED PLATFORM WALKTHROUGH ENGINE */}
+      <GuidedTour />
     </div>
   );
 };

@@ -1,3 +1,51 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+
+@media (max-width: 768px) {
+  
+  .grid-cols-2, 
+  div[style*="gridTemplateColumns: 1fr 1fr"],
+  div[style*="gridTemplateColumns: 1fr 300px"],
+  div[style*="gridTemplateColumns: 320px 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  
+
+  canvas {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
